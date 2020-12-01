@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-courses',
-  templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+	selector: 'app-courses',
+	templateUrl: './courses.component.html',
+	styleUrls: [ './courses.component.css' ]
 })
 export class CoursesComponent implements OnInit {
+	courseTitle: string;
+	constructor() {}
 
-  constructor() { }
+	ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
+	getCourseTitle() {
+		return (this.courseTitle = 'List of Courses');
+	}
 }
