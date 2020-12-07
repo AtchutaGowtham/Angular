@@ -20,6 +20,7 @@ export class CoursesComponent implements OnInit {
 		price: 9.99,
 		releaseDate: new Date(2016, 3, 1)
 	};
+	text = `dwefkwckdnkcnrwfnrwknkrwnknrkfkrwnknkwnrwnnrwkjnrwknrkwnkrwnrw ehfiue uiwehfuieqfneifeufoef`;
 
 	constructor(coursesService: CoursesService) {
 		this.courses = coursesService.getCourses();
