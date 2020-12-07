@@ -2,3 +2,40 @@
 <ul>
     <li *ngFor="let course of courses">{{course}}</li>
 </ul>
+<img src="{{ imageUrl }}" alt="">
+<img [src]="imageUrl" alt="">
+
+<table>
+    <tr>
+        <td [attr.colspan]="colspan"></td>
+    </tr>
+</table>
+
+<button class="btn btn-primary" [class.active]="isActive">Save</button>
+
+<button [style.backgroundColor]="isActive ? 'blue' : 'white'">Style Binding</button>
+
+<button (click)="onSave($event)">Save</button>
+
+<div (click)="onDivClicked()">
+    <button (click)="onSave($event)">Event bubbling</button>
+</div>
+
+<input (keyup.enter)="onKeyUp()">
+<hr>
+<input (keyup.enter)="onEnterWithoutTemplateVariable($event)">
+<hr>
+<input #email (keyup.enter)="onEnterWithTemplateVariable(email.value)">
+<hr>
+<input [(ngModel)]="twoWayBindingEmail" (keyup.enter)="onEnterWithTwoWayBinding()">
+<hr>
+<!--Directives-->
+{{course.title | uppercase | lowercase}}
+<br>
+{{course.rating | number:'1.6-7'}}
+<br>
+{{course.students | number}}
+<br>
+{{course.price | currency:'AUD':false:'3.2-2'}}
+<br>
+{{course.releaseDate | date:'shortDate'}}
